@@ -1,6 +1,6 @@
-# xk6-udp
+# xk6-tls
 
-A k6 extension for sending data to UDP port
+A k6 extension for sending data to tcp tls port
 
 ## Build
 
@@ -21,20 +21,20 @@ Then:
 
   ```shell
   xk6 build master \
-    --with github.com/dhruvit96/xk6-udp
+    --with github.com/dhruvit96/xk6-tls
   ```
 
 ## Example
 
 ```javascript
-import udp from 'k6/x/udp';
+import tls from 'k6/x/tls';
 import { check } from 'k6';
 
-const conn = udp.connect('host:port');
+const conn = tls.connect('host:port');
 
 export default function () {
-  udp.write(conn, 'Say Hello');
-  let res = String.fromCharCode(...udp.read(conn, 1024))
+  tls.write(conn, 'Say Hello');
+  let res = String.fromCharCode(...tls.read(conn, 1024))
   check (res, {
     'verify ag tag': (res) => res.includes('Hello')
   });
