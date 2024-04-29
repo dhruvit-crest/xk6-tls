@@ -1,4 +1,4 @@
-module github.com/dhruvit96/xk6-udp
+module github.com/dhruvit96/xk6-tls
 
 go 1.21
 
