@@ -1,4 +1,4 @@
-module github.com/dhruvit96/xk6-tls
+module github.com/dhruvit-crest/xk6-tls
 
 go 1.21
 
